@@ -83,6 +83,8 @@ jobs:
         run: mvn -B verify -P integration-test --file pom.xml
 
   coverage:
+    name: JaCoCo Code Coverage
+    needs: [unit-test,integrated-test]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
