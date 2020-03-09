@@ -15,6 +15,7 @@ jobs:
         uses: datreeio/validate-license-action@v1.0.0
         with:
           licenses: GPL-3.0
+          args: GPL-3.0
 
   validate:
     runs-on: ubuntu-latest
