@@ -8,6 +8,7 @@ on:
 
 jobs:
   pre-flight:
+    name: Pre-Flight Checks for Project
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -17,6 +18,7 @@ jobs:
           args: GPL-3.0
 
   validate:
+    name: Code Validation
     needs: pre-flight
     runs-on: ubuntu-latest
     steps:
@@ -29,6 +31,7 @@ jobs:
         run: mvn -B validate --file pom.xml
 
   compile:
+    name: Code Compilation
     needs: validate
     runs-on: ubuntu-latest
     steps:
@@ -40,7 +43,8 @@ jobs:
       - name: Cleans and Compile the code
         run: mvn -B clean compile --file pom.xml
 
-  checkstyle:
+  static-code-check:
+    name: Static code analysis
     needs: compile
     runs-on: ubuntu-latest
     steps:
@@ -49,3 +53,5 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
+      - name: Static code check with checkstyle
+        run: mvn -B checkstyle:checkstyle --file pom.xml
