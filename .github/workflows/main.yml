@@ -110,3 +110,5 @@ jobs:
           java-version: 1.8
       - name: SonarQube Analysis
         run: mvn -B verify sonar:sonar -Dsonar.login=${{ secrets.SONAR_TOKEN }} --file pom.xml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
