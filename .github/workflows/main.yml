@@ -58,7 +58,7 @@ jobs:
       - name: Analysis Publisher
         uses: digirati-labs/analysis-publisher@0.0.1
         with:
-          args: ["--report-type=checkstyle", "--path=**/checkstyle/*.xml", "--publisher=github_check"]
+          args: --report-type=checkstyle --path=**/checkstyle/*.xml --publisher=github_check
 
 
   unit-test:
