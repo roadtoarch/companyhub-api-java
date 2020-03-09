@@ -55,6 +55,11 @@ jobs:
           java-version: 1.8
       - name: Static code check with checkstyle
         run: mvn -B checkstyle:checkstyle --file pom.xml
+      - name: Analysis Publisher
+        uses: digirati-labs/analysis-publisher@0.0.1
+        with:
+          args: ["--report-type=checkstyle", "--path=**/checkstyle/*.xml", "--publisher=github_check"]
+
 
   unit-test:
     name: Unit Tests
