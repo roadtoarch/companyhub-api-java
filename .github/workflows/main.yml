@@ -16,9 +16,6 @@ jobs:
         uses: datreeio/validate-license-action@v1.0.0
         with:
           args: GPL-3.0
-      - name: Secret Scan
-        uses: max/secret-scan@1.0.0
-
 
   validate:
     name: Code Validation
