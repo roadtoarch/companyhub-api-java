@@ -11,10 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: validate-license-action
+      - name: Validate GPL-3.0 License
         uses: datreeio/validate-license-action@v1.0.0
         with:
-          licenses: GPL-3.0
           args: GPL-3.0
 
   validate:
@@ -38,3 +37,8 @@ jobs:
           java-version: 1.8
       - name: Cleans and Compile the code
         run: mvn -B clean compile --file pom.xml
+
+  checkstyle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
