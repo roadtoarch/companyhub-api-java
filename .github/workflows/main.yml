@@ -79,5 +79,5 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-      - name: Unit Test execution
-        run: mvn -B test --file pom.xml
+      - name: Integrated Test execution
+        run: mvn -B verify -P integration-test --file pom.xml
