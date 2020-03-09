@@ -16,6 +16,9 @@ jobs:
         uses: datreeio/validate-license-action@v1.0.0
         with:
           args: GPL-3.0
+      - name: FIXME alert
+        uses: bbugh/action-fixme-check@v1.0.0
+
 
   validate:
     name: Code Validation
@@ -55,7 +58,7 @@ jobs:
           java-version: 1.8
       - name: Static code check with checkstyle
         run: mvn -B checkstyle:checkstyle --file pom.xml
-        
+
   unit-test:
     name: Unit Tests
     needs: static-code-check
@@ -106,4 +109,4 @@ jobs:
         with:
           java-version: 1.8
       - name: SonarQube Analysis
-        run: mvn -B verify sonar:sonar -Dsonar.login=${{ secrets.SONAR_TOKEN }} -Dsonar.password=${{ secrets.SONAR_TOKEN }} --file pom.xml
+        run: mvn -B verify sonar:sonar -Dsonar.login=${{ secrets.SONAR_TOKEN }} --file pom.xml
