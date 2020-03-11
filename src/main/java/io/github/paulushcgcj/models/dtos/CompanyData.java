@@ -1,4 +1,4 @@
-package io.github.paulushcgcj.models;
+package io.github.paulushcgcj.models.dtos;
 
 import lombok.*;
 

@@ -1,9 +1,10 @@
-package io.github.paulushcgcj.models;
+package io.github.paulushcgcj.models.entities;
 
 import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Set;
 
 @Data
 @Builder
@@ -34,4 +35,7 @@ public class CompanyEntity {
     @Column(length = 50)
     private String description;
     private LocalDate updated_at;
+
+    @OneToMany(mappedBy = "campus")
+    private Set<CampusEntity> campuses;
 }
