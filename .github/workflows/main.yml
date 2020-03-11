@@ -19,7 +19,6 @@ jobs:
       - name: FIXME alert
         uses: bbugh/action-fixme-check@v1.0.0
 
-
   validate:
     name: Code Validation
     needs: pre-flight
@@ -33,9 +32,19 @@ jobs:
       - name: Validate actual code
         run: mvn -B validate --file pom.xml
 
+  formatting:
+    name: Code Formatting
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2 # v2 minimum required
+      - uses: axel-op/googlejavaformat-action@v2.0.0
+        with:
+          args: "--replace"
+
   compile:
     name: Code Compilation
-    needs: validate
+    needs: formatting
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
