@@ -3,14 +3,17 @@ package io.github.paulushcgcj.converters;
 import io.github.paulushcgcj.models.dtos.CampusData;
 import io.github.paulushcgcj.models.entities.CampusEntity;
 import io.github.paulushcgcj.models.entities.CompanyEntity;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@DisplayName("Unit Test | Campus Converter Test Suite")
 public class CampusConverterTest {
 
     private CampusConverter converter = new CampusConverter();
 
+    @DisplayName("Happy Path Conversion from Entity to Data")
     @Test
     public void shouldConvertAtoB() {
 
@@ -36,6 +39,7 @@ public class CampusConverterTest {
 
     }
 
+    @DisplayName("Happy Path Conversion from Data to Entity")
     @Test
     public void shouldConvertBtoA() {
 

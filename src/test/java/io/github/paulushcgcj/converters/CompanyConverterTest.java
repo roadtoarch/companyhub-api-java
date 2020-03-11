@@ -2,16 +2,19 @@ package io.github.paulushcgcj.converters;
 
 import io.github.paulushcgcj.models.dtos.CompanyData;
 import io.github.paulushcgcj.models.entities.CompanyEntity;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@DisplayName("Unit Test | Company Converter Test Suite")
 public class CompanyConverterTest {
 
     private CompanyConverter converter = new CompanyConverter();
 
+    @DisplayName("Happy Path Conversion from Entity to Data")
     @Test
     public void shouldConvertAtoB(){
 
@@ -46,6 +49,7 @@ public class CompanyConverterTest {
 
     }
 
+    @DisplayName("Happy Path Conversion from Data to Entity")
     @Test
     public void shouldConvertBtoA(){
 

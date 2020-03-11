@@ -3,6 +3,7 @@ package io.github.paulushcgcj.models.entities;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @Builder
@@ -24,4 +25,7 @@ public class CampusEntity {
     @ManyToOne
     @JoinColumn(name = "company_id",nullable = false)
     private CompanyEntity company;
+
+    @OneToMany(mappedBy = "campus")
+    private Set<EmployeeEntity> employees;
 }

@@ -36,6 +36,6 @@ public class CompanyEntity {
     private String description;
     private LocalDate updated_at;
 
-    @OneToMany(mappedBy = "campus")
+    @OneToMany(mappedBy = "company")
     private Set<CampusEntity> campuses;
 }

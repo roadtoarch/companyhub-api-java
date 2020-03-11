@@ -193,7 +193,7 @@
                         <exclude>**/configuration/*</exclude>
                         <exclude>**/exceptions/*</exclude>
                         <exclude>**/repositories/*</exclude>
-                        <exclude>**/models/*</exclude>
+                        <exclude>**/models/**</exclude>
                         <exclude>**/*$*Builder*</exclude>
                     </excludes>
                 </configuration>
