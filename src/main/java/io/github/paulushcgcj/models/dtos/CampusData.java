@@ -8,9 +8,9 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CampusData {
-    private Integer id;
-    private String name;
-    private String city;
-    private String address;
-    private String company;
+  private Integer id;
+  private String name;
+  private String city;
+  private String address;
+  private String company;
 }
