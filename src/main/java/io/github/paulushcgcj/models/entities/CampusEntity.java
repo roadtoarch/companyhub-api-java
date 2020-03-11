@@ -1,8 +1,7 @@
 package io.github.paulushcgcj.models;
 
-import lombok.*;
-
 import javax.persistence.*;
+import lombok.*;
 
 @Data
 @Builder
@@ -11,17 +10,20 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity(name = "campuses")
 public class CampusEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    @Column(length = 50)
-    private String campus_name;
-    @Column(length = 50)
-    private String city;
-    @Column(length = 400)
-    private String address;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "company_id",nullable = false)
-    private CompanyEntity company;
+  @Column(length = 50)
+  private String campus_name;
+
+  @Column(length = 50)
+  private String city;
+
+  @Column(length = 400)
+  private String address;
+
+  @ManyToOne
+  @JoinColumn(name = "company_id", nullable = false)
+  private CompanyEntity company;
 }

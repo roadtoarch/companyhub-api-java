@@ -1,4 +1,3 @@
 package io.github.paulushcgcj.converters;
 
-public class CampusConverter {
-}
+public class CampusConverter {}
