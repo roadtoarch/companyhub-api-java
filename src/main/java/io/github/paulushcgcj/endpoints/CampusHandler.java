@@ -1,4 +1,3 @@
 package io.github.paulushcgcj.endpoints;
 
-public class CampusHandler {
-}
+public class CampusHandler {}
