@@ -34,8 +34,16 @@ public class CompanyEntity {
     private String phoneNumber;
     @Column(length = 50)
     private String description;
-    private LocalDate updated_at;
+    private LocalDate updatedAt;
 
     @OneToMany(mappedBy = "company")
     private Set<CampusEntity> campuses;
+
+
+    @PrePersist
+    @PreUpdate
+    public void prePersistAndPreUpdate() {
+        updatedAt = LocalDate.now();
+    }
+
 }

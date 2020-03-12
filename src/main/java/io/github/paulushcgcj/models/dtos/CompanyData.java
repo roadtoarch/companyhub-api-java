@@ -8,6 +8,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CompanyData {
+  private Integer id;
   private String name;
   private String homepageUrl;
   private String blogUrl;

@@ -31,7 +31,7 @@ public class CompanyConverterTest {
                 .emailAddress("email@email.com")
                 .phoneNumber("1234")
                 .description("1234")
-                .updated_at(LocalDate.now())
+                .updatedAt(LocalDate.now())
                 .build()
         );
 
