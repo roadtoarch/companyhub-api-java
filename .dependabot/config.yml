@@ -11,6 +11,7 @@ update_configs:
     default_labels:
       - "security"
       - "bug"
+      - "dependencies"
     commit_message:
       prefix: "fix"
       prefix_development: "chore"
