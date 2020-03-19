@@ -1,4 +1,4 @@
-name: automerge
+name: Auto PR Merger
 on:
   pull_request:
     types:
@@ -29,5 +29,5 @@ jobs:
           MERGE_FORKS: "false"
           MERGE_RETRIES: "6"
           MERGE_RETRY_SLEEP: "180000"
-          UPDATE_LABELS: "bot,"
+          UPDATE_LABELS: "bot"
           UPDATE_METHOD: "rebase"
