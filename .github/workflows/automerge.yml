@@ -1,4 +1,4 @@
-name: automerge
+name: Auto PR Merger
 on:
   pull_request:
     types:
